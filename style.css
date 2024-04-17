@@ -1,0 +1,45 @@
+body {
+    margin:0;    
+    background-color:rgb(254, 255, 183);
+}
+body:not(header)
+{
+   margin-top:45px;
+   border-left: 50px;
+}
+main{
+    margin-left:20px;
+    margin-right:20px;
+}
+label {
+    display:block;
+}
+.explanation{
+    color:red;
+    font-size:16px;
+}
+
+header{
+    background-color:rgb(255, 211, 116);
+    position: fixed;
+    top: 0;
+    width: 101vw;
+    z-index: 1;
+    height: 40px
+}
+nav{
+    display:flex;
+    justify-content:space-evenly;
+    margin-top: 2px;
+}
+a {
+    text-decoration: none;
+    color:black;
+    font-size: 30px;
+}
+a:hover{
+    color:white;
+}
+h2 {
+    font-size:40px;
+}
