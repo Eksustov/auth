@@ -1,5 +1,5 @@
-<?php require "views/components/head.php" ?>
-<?php require "views/components/navbar.php" ?>
+<?php require "../views/components/head.php" ?>
+<?php require "../views/components/navbar.php" ?>
 <h2>Register ski</h2>
 <form method="POST">
     <label>
@@ -20,4 +20,6 @@
     if (isset($errors["password"])) {?>
         <p><?= $errors["password"] ?></p>
     <?php } ?>
-<?php require "views/components/footer.php" ?>
+
+    <a href="/login">Login</a>
+<?php require "../views/components/footer.php" ?>

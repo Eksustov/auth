@@ -1,7 +1,10 @@
 <?php
-require "Validator.php";
-require "Database.php";
-$config = require("config.php");
+
+auth();
+
+require "../Core/Validator.php";
+require "../Core/Database.php";
+$config = require("../config.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $db = new Database($config);
@@ -33,6 +36,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 ":password" => password_hash($_POST["password"], PASSWORD_BCRYPT)
             ];
         $result = $db->execute($query, $params);
+
+        $_SESSION["flash"] = "Tu esi veiksmigi registrejies";
+        header("Location: /login");
+        die();
     }
 
     $_POST["email"];
@@ -40,4 +47,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 };
 
 $title = "REGISTER";
-require "views/auth/register.view.php";
+require "../views/auth/register.view.php";
